@@ -4,6 +4,8 @@ This package provides useful utilities and context managers for working with psy
 including role switching, advisory locks, autocommit management, and custom exceptions.
 """
 
+__version__ = "0.1.2"
+
 from .contextmanagers import (
     autocommit,
     switch_role,
