@@ -1,16 +1,17 @@
 """Tests for role management functions (integration, real DB)."""
 
-import pytest
 import secrets
 
+import pytest
+
 from psycopg_toolbox import (
-    create_user,
+    AlreadyExistsError,
     create_role,
+    create_user,
     drop_user_or_role,
     get_current_user,
     user_or_role_exists,
 )
-from psycopg_toolbox import AlreadyExistsError
 
 
 @pytest.mark.asyncio

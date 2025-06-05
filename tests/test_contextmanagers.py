@@ -5,8 +5,8 @@ from psycopg.errors import Error
 
 from psycopg_toolbox.contextmanagers import (
     autocommit,
-    switch_role,
     obtain_advisory_lock,
+    switch_role,
 )
 from psycopg_toolbox.logging import LoggingConnection
 

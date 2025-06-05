@@ -1,7 +1,7 @@
 """Context managers for psycopg-toolbox."""
 
-from contextlib import asynccontextmanager
 from collections.abc import AsyncGenerator
+from contextlib import asynccontextmanager
 
 from psycopg import AsyncConnection
 

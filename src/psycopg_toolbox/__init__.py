@@ -4,22 +4,20 @@ This package provides useful utilities and context managers for working with psy
 including role switching, advisory locks, autocommit management, and custom exceptions.
 """
 
-__version__ = "0.1.2"
-
 from .contextmanagers import (
     autocommit,
-    switch_role,
     obtain_advisory_lock,
+    switch_role,
 )
 from .exceptions import AlreadyExistsError, DatabaseError
 from .logging import LoggingConnection, LoggingCursor
 from .query_helpers import (
     create_database,
+    create_schema,
     database_exists,
     drop_database,
-    create_schema,
-    schema_exists,
     drop_schema,
+    schema_exists,
 )
 from .role_helpers import (
     create_role,

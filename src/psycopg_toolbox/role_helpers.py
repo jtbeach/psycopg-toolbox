@@ -4,7 +4,7 @@ import logging
 from typing import Any
 
 from psycopg import AsyncConnection
-from psycopg.sql import SQL, Identifier, Literal, Composable
+from psycopg.sql import SQL, Composable, Identifier, Literal
 
 from .exceptions import AlreadyExistsError
 

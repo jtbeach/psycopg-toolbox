@@ -1,9 +1,9 @@
 [project]
 name = "psycopg-toolbox"
-version = "0.1.2"
+version = "0.1.3"
 description = "A collection of useful utilities and context managers for working with psycopg3, including role switching, advisory locks, autocommit management, cloud environment detection, and custom exceptions. Designed to make common PostgreSQL operations more convenient and safer in async Python applications."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [
     { name = "Joel Beach", email = "12853460+jtbeach@users.noreply.github.com" }
@@ -13,7 +13,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Database",
     "Topic :: Database :: Front-Ends",
@@ -58,7 +57,7 @@ disable_warnings = ["no-data-collected", "module-not-measured", "couldnt-parse"]
 
 [tool.mypy]
 plugins = []
-python_version = "3.11"
+python_version = "3.12"
 warn_redundant_casts = true
 warn_unused_ignores = true
 check_untyped_defs = true

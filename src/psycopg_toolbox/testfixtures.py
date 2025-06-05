@@ -1,8 +1,8 @@
 """Test fixtures for psycopg-toolbox."""
 
 import os
-from dataclasses import dataclass
 from collections.abc import AsyncGenerator
+from dataclasses import dataclass
 
 import pytest
 

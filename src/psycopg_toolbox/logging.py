@@ -9,8 +9,8 @@ uses LoggingCursor as the default cursor_factory.
 
 import logging
 import re
-from typing import Any, Generic, Self, TypeVar
 from collections.abc import Iterable, Mapping, Sequence
+from typing import Any, Self
 
 from psycopg import AsyncConnection
 from psycopg.cursor_async import AsyncCursor
@@ -19,10 +19,8 @@ from psycopg.sql import SQL, Composed
 
 logger = logging.getLogger(__name__)
 
-T = TypeVar("T")
 
-
-class LoggingCursor(AsyncCursor[T], Generic[T]):
+class LoggingCursor[T](AsyncCursor[T]):
     """A cursor that logs queries and parameters, but skips params if query is sensitive.
 
     If the query contains a banned word (e.g., password, ssn, credit card),

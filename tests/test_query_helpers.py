@@ -6,15 +6,15 @@ from psycopg.errors import Error
 from psycopg_toolbox import (
     AlreadyExistsError,
     LoggingConnection,
+    autocommit,
     create_database,
+    create_schema,
+    create_user,
     database_exists,
     drop_database,
-    create_user,
-    drop_user_or_role,
-    autocommit,
-    create_schema,
-    schema_exists,
     drop_schema,
+    drop_user_or_role,
+    schema_exists,
 )
 
 

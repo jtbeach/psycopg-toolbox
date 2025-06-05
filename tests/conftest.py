@@ -1,8 +1,7 @@
 """Test configuration for psycopg-toolbox."""
 
-import asyncio
 import os
-from collections.abc import Generator
+from collections.abc import AsyncGenerator, Generator
 
 import pytest
 from psycopg import AsyncConnection
@@ -42,7 +41,7 @@ def isolated_env(
 
 
 @pytest.fixture(scope="session", autouse=True)
-def cleanup_psycopg_toolbox_test_dbs(db_config) -> None:
+async def cleanup_psycopg_toolbox_test_dbs(db_config) -> AsyncGenerator[None, None]:
     """Remove any leftover test databases with the prefix 'psycopg_toolbox_test_' before the test session starts."""
 
     async def _cleanup():
@@ -69,4 +68,6 @@ def cleanup_psycopg_toolbox_test_dbs(db_config) -> None:
                 except Exception:
                     pass  # Ignore errors, best effort cleanup
 
-    asyncio.get_event_loop().run_until_complete(_cleanup())
+    yield
+
+    await _cleanup()
